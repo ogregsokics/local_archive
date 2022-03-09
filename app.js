@@ -7,6 +7,8 @@ let row = document.createElement('tr');
 loadEventListeners();
 
 
+
+
 function loadEventListeners() {
 
 
@@ -23,6 +25,8 @@ function loadEventListeners() {
         box.addEventListener("click", (e) => getJson(e.target.name)));
 
 }
+
+
 
 
 let compare = (obj1, obj2) => {
@@ -88,6 +92,8 @@ function getJson(playlist) {
 }
 
 
+let talalat = 0;
+
 
 function filterTasks() {
 
@@ -108,7 +114,7 @@ function filterTasks() {
 
                 if (book.getName.toLowerCase().indexOf(text) != -1) {
 
-
+                    talalat++;
 
                     let row = document.createElement('tr');
 
@@ -131,22 +137,20 @@ function filterTasks() {
 
 
 
-                else {
 
 
-                    let row = document.createElement('tr');
+
+            })
+
+            if (talalat = 0) {
+
+                let row = document.createElement('tr');
 
                     row.innerHTML = `<td>NINCS TALÁLAT</td>`;
 
 
                     list.appendChild(row);
-                }
-
-
-
-
-
-            })
+            }
 
         })
 }
