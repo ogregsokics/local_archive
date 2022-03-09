@@ -131,7 +131,7 @@ function filterTasks() {
 
 
 
-                if (book.getName.toLowerCase().indexOf(text) = -1) {
+                else {
 
 
                     let row = document.createElement('tr');
