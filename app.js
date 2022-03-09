@@ -142,7 +142,12 @@ function filterTasks() {
 
             })
 
-            if (talalat = 0) {
+           
+
+        })
+
+
+         if (talalat = 0) {
 
                 let row = document.createElement('tr');
 
@@ -152,7 +157,7 @@ function filterTasks() {
                     list.appendChild(row);
             }
 
-        })
+
 }
 
 
