@@ -97,42 +97,23 @@ function filterTasks() {
     list.innerHTML = "";
 
 
-fetch("recent_links.json")
+    fetch("recent_links.json")
         .then(response => response.json())
-        .then(response => {
+        .then(data => {
 
-            console.log(response);})
-
-
-    /*fetch(`https://eu-central-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/rest-reviews-jowjb/service/puzser_drive_links/incoming_webhook/search?getName=${text}`)
-        .then(response => response.json())
-        .then(response => {
-
-            console.log(response);
-
-            if (response.elements.length === 0) {
+            data.forEach(function(book) {
 
 
-                let row = document.createElement('tr');
-
-                row.innerHTML = `<td>NINCS TALÁLAT</td>`;
 
 
-                list.appendChild(row);
+                if (book.getName.toLowerCase().indexOf(text) != -1) {
 
 
-            }
+
+                    let row = document.createElement('tr');
 
 
-            response.elements.sort(compare);
-
-            response.elements.forEach(function(book) {
-
-
-                let row = document.createElement('tr');
-
-
-                row.innerHTML = `
+                    row.innerHTML = `
 
                     <td>${book.getName}</td>
                     <td class="text-center">${book.parent_folder}</td>
@@ -143,20 +124,35 @@ fetch("recent_links.json")
                 `;
 
 
-                list.appendChild(row);
-
-            });
+                    list.appendChild(row);
 
 
-
-        })*/
+                }
 
 
 
+                if (book.getName.toLowerCase().indexOf(text) = -1) {
+
+
+                    let row = document.createElement('tr');
+
+                    row.innerHTML = `<td>NINCS TALÁLAT</td>`;
+
+
+                    list.appendChild(row);
+                }
 
 
 
+
+
+            })
+
+        })
 }
+
+
+
 
 
 
